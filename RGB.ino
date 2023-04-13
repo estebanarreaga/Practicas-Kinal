@@ -53,7 +53,6 @@ void loop()
     digitalWrite(LEDazul,LOW);
     delay(500);
     digitalWrite(LEDazul,HIGH);
-    delay(1);
   
   }
 
