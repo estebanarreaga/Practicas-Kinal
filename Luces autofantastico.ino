@@ -14,7 +14,7 @@ int leds = 10;
 int i=0;
 //variables
 void setup() {
-  Serial.begin(9600);//inicio de la comunicacion serial
+  Serial.begin(9600);//inicio de00 la comunicacion serial
   pinMode(ledsdisplay[i], OUTPUT);//poner el display en salida
   Serial.println("Luces Autofantastico");
   Serial.println("Hecho por Esteban");
@@ -25,19 +25,17 @@ void loop()
 {
  for (i = 0; i < leds; i++) {
     digitalWrite(ledsdisplay[i], HIGH);
-    delay(500);
-  }
-  for (i = leds - 2; i >= 0; i--) {
+    delay(50);
     digitalWrite(ledsdisplay[i], LOW);
-    delay(500);
+    delay(50);
   }
+
   for (i = leds - 1; i >= 0; i--) {
     digitalWrite(ledsdisplay[i], HIGH);
     delay(500);
-  }
-  for (i = 1; i < leds; i++) {
     digitalWrite(ledsdisplay[i], LOW);
-    delay(500);
-  }  
+    delay(50);
+  }
+  
 
 }
