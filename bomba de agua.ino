@@ -9,38 +9,22 @@
  Carnet: 2020198 
  */
 
-// Definición de constantes
-#define sensor 2    // Pin analógico utilizado para el sensor
-#define LedAzul 3   // Pin digital utilizado para el LED azul
-#define LedRojo 4    // Pin digital utilizado para el LED rojo
-#define rele 5      // Pin digital utilizado para el módulo de relés
-
-// Función que lee el valor del sensor y retorna un valor entre 0 y 255
-int readSensor() {
-  int sensorValue = analogRead(sensor);
-  }
+ int rele = 8; // Pin del módulo de relé
+ int sensorsito = 2; // Pin del sensor de agua
 
 void setup() {
-  // Configuración de pines
-  pinMode(LedAzul, OUTPUT);
-  pinMode(LedRojo, OUTPUT);
   pinMode(rele, OUTPUT);
+  pinMode(sensorsito, INPUT);
 }
 
 void loop() {
-  // Lectura del valor del sensor
-  int sensorValue = readSensor();
-  
-  // Encendido de la bomba si el recipiente está vacío
-  if (sensorValue< 38) {
+  // Verifica si hay agua en el sensor
+  if (digitalRead(sensorsito)==LOW) {
+    // Si hay agua, activa el relé
     digitalWrite(rele, HIGH);
-    digitalWrite(LedAzul, HIGH);
-    digitalWrite(LedRojo, LOW);
   }
-  // Apagado de la bomba si el recipiente está lleno
-  if (sensorValue >40) {
-    digitalWrite(rele, LOW);
-    digitalWrite(LedAzul, LOW);
-    digitalWrite(LedRojo, HIGH);
+   //si no hay agua
+if(digitalRead(sensorsito)==HIGH){
+   digitalWrite(rele, LOW);
   }
 }
