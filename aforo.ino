@@ -1,12 +1,14 @@
 /*
-   Fundacion Kinal
-   Centro educativo tecnico laboral Kinal
-   Quinto perito
-   Quinto electronica
-   Codigo Tecnico: EB5AM  
-   Curso: Taller de electronica digital y reparacion de computadoras 
-   Nombre: Esteban Andres Rivas Arreaga
-*/
+ Fundacion Kinal
+ Centro Educativo Tecnico Laboral Kinal
+ Electronica
+ Grado: Quinto
+ Seccion: A
+ Curso: Taller de electronica digital y reparacion de computadoras
+ Nombre: Esteban Andres Rivas Arreaga
+ Carnet: 2020198 
+ */
+
 #define trigger  2 //definimos el pin al que conectaremos el trigger 
 #define echo  3 //definimos el pin al que conetaremos el echo 
 #define a  4
@@ -110,8 +112,7 @@ void loop() {
      digitalWrite(f, LOW);
      digitalWrite(g, LOW);
    }
-   void dosito(){
-       
+   void dosito(){ 
      digitalWrite(a, HIGH);
      digitalWrite(b, HIGH);
      digitalWrite(c, LOW);
