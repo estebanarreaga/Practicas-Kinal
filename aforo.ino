@@ -11,6 +11,7 @@
 
 #define trigger  2 //definimos el pin al que conectaremos el trigger 
 #define echo  3 //definimos el pin al que conetaremos el echo 
+//pines para el display
 #define a  4
 #define b  5
 #define c  6
@@ -18,15 +19,15 @@
 #define e  8
 #define f  9
 #define g  10
-
+//pin del rele
 #define rele  13
 
 int contar = 0;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(trigger, OUTPUT);//definimos la variable disparo como una salida
-  pinMode(echo,INPUT);//definimos la variable receptro como una entrada
+  pinMode(trigger, OUTPUT);//definimos la variable trigger como una salida
+  pinMode(echo,INPUT);//definimos la variable echo como una entrada
   pinMode(rele,OUTPUT);
   digitalWrite(rele, HIGH);
   pinMode(a,OUTPUT);
