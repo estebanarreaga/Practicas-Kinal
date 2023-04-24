@@ -4,10 +4,8 @@
    Quinto perito
    Quinto electronica
    Codigo Tecnico: EB5AM  
-   Curso: Taller de electronica digital y reparacion de computadoras I
-   Proyecto: Contador de aforo 
-   Nombre: Jared Hernan Ruiz Anleu
-   Fecha: 21/04/23
+   Curso: Taller de electronica digital y reparacion de computadoras 
+   Nombre: Esteban Andres Rivas Arreaga
 */
 #define trigger  2 //definimos el pin al que conectaremos el trigger 
 #define echo  3 //definimos el pin al que conetaremos el echo 
