@@ -37,7 +37,7 @@ void setup() {
 
 void loop() {
   int distancin=dis();
-    if(distancin ==50){
+    if(distancin >=50){
       lcdsito.clear();
       lcdsito.setCursor(7,0);
       lcdsito.print("50");  
@@ -56,7 +56,7 @@ void loop() {
       lcdsito.setCursor(6,1); 
       lcdsito.print("Libre");
     }
-    if(distancin ==30 && distancin <=35){
+    if(distancin >=30 && distancin <=35){
       lcdsito.clear();
       lcdsito.setCursor(7,0);
       lcdsito.print("30");
@@ -83,7 +83,7 @@ void loop() {
       lcdsito.setCursor(5,1); 
       lcdsito.print("Cuidado");
     }
-     if(distancin ==10 && distancin <=15){
+     if(distancin >=10 && distancin <=15){
       lcdsito.clear();
       lcdsito.setCursor(7,0);
       lcdsito.print("10");
