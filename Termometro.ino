@@ -17,30 +17,38 @@
 #define ledsito2 4
 #define ledsito3 5
 //Constructores
-OneWire ourWire(2);                //Se establece el pin 2  como el pin que utilizaremos para el protocolo OneWire
-DallasTemperature sensors(&ourWire); //Se declara una objeto para nuestro sensor
+OneWire ourWire(2);                
+DallasTemperature sensorsito(&ourWire); 
 LiquidCrystal_I2C lcdsito(0x27,16,2);
 
 void setup() {
 delay(1000);
 lcdsito.init();
 lcdsito.backlight();   //Inicio la comunicacion serial
-sensors.begin();   //Se inicia el sensor
+sensorsito.begin();   //Se inicia el sensor
 }
  
 void loop() {
-sensors.requestTemperatures();   //Se envía el comando para leer la temperatura
-float temperaturita= sensors.getTempCByIndex(0); //Se obtiene la temperatura en ºC
-float temperaturita1 = sensors.getTempFByIndex(0); //Se obtiene la temperatura en ºF
+sensorsito.requestTemperatures();   //Se envía el comando para leer la temperatura
+float temperaturita= sensorsito.getTempCByIndex(0); //Se obtiene la temperatura en ºC
+float temperaturita1 = sensorsito.getTempFByIndex(0); //Se obtiene la temperatura en ºF
 
 lcdsito.setCursor(0,0);
 lcdsito.print("Temperatura= ");
 lcdsito.setCursor(0,1);
 lcdsito.print(temperaturita);
 lcdsito.println("C"); 
+lcdsito.setCursor(6,1); 
+lcdsito.print(" ");
+lcdsito.setCursor(7,1); 
+lcdsito.print(" ");
+lcdsito.setCursor(8,1); 
+lcdsito.print(" ");
 lcdsito.setCursor(9,1); 
 lcdsito.print(temperaturita1);
 lcdsito.println("F");
+lcdsito.setCursor(15,1); 
+lcdsito.print("  ");
 delay(100);
 
 if(temperaturita >=30){
