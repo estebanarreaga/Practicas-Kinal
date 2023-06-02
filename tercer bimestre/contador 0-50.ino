@@ -7,7 +7,7 @@
  * Curso: Taller de electronica digital y reparación de computadoras I
  * Nombre: Esteban Andres Rivas Arreaga
  * Carnet: 2020198
- * Proyecto: Uso de interrupciones externas ejemplo 3 - Bimestre III
+ * Proyecto:Contador de 0-50
 */
 
 
@@ -54,7 +54,7 @@ void setup() {
   pinMode(F, OUTPUT);
   pinMode(G, OUTPUT);
   pinMode(rise, INPUT);  
-  pinMode(fall, INPUT); 
+  pinMode(fall, INPUT_PULLUP); 
   attachInterrupt(digitalPinToInterrupt(rise),ISR_rising,RISING);  
   attachInterrupt(digitalPinToInterrupt(fall),ISR_falling,FALLING); 
 }
@@ -66,8 +66,6 @@ if(contador)
   contador = false; 
   Serial.println(i); 
 }
-  displaysito();
-  delay(500);
   displaysito();
   delay(500);
 }
