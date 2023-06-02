@@ -7,7 +7,7 @@
  * Curso: Taller de electronica digital y reparación de computadoras I
  * Nombre: Esteban Andres Rivas Arreaga
  * Carnet: 2020198
- * Proyecto:Contador de 0-50
+ * Proyecto: Contador de 0-50
 */
 
 
@@ -34,7 +34,7 @@ void ISR_rising(void);
 
 //Variables
 volatile static bool contador=false; 
-volatile static unsigned char i=0; 
+int i=0; 
 
 void setup() {
   
@@ -68,27 +68,36 @@ if(contador)
 }
   displaysito();
   delay(500);
+  if(i>50){
+    i=0;
+  }
+  if(i<0){
+    i=50;
+}
 }
 //Funciones de ISR
 void ISR_rising(void)
 {
-  if (i < 50) {
     contador = true;
     i++;
-  } 
 }
 
 void ISR_falling(void)
 {
-  if (i > 0) {
     contador = true;
-    i--;
-  }  
+    i--; 
   }
 
 
 void displaysito(){
   if(i==0){
+     digitalWrite(A,HIGH);
+     digitalWrite(B,HIGH);
+     digitalWrite(C,HIGH);
+     digitalWrite(D,HIGH);
+     digitalWrite(E,HIGH);
+     digitalWrite(F,HIGH);
+     digitalWrite(G,LOW);
      digitalWrite(a,HIGH);
      digitalWrite(b,HIGH);
      digitalWrite(c,HIGH);
@@ -96,157 +105,150 @@ void displaysito(){
      digitalWrite(e,HIGH);
      digitalWrite(f,HIGH);
      digitalWrite(g,LOW);
-     digitalWrite(A,LOW);
-     digitalWrite(B,LOW);
-     digitalWrite(C,LOW);
-     digitalWrite(D,LOW);
-     digitalWrite(E,LOW);
-     digitalWrite(F,LOW);
-     digitalWrite(G,LOW);
   }
   if(i==1){
-     digitalWrite(a, LOW);
-     digitalWrite(b, HIGH);
-     digitalWrite(c, HIGH);
-     digitalWrite(d, LOW);
-     digitalWrite(e, LOW);
-     digitalWrite(f, LOW);
-     digitalWrite(g, LOW);
-     digitalWrite(A,LOW);
-     digitalWrite(B,LOW);
-     digitalWrite(C,LOW);
-     digitalWrite(D,LOW);
-     digitalWrite(E,LOW);
-     digitalWrite(F,LOW);
-     digitalWrite(G,LOW);
+     digitalWrite(A, LOW);
+     digitalWrite(B, HIGH);
+     digitalWrite(C, HIGH);
+     digitalWrite(D, LOW);
+     digitalWrite(E, LOW);
+     digitalWrite(F, LOW);
+     digitalWrite(G, LOW);
+     digitalWrite(a,HIGH);
+     digitalWrite(b,HIGH);
+     digitalWrite(c,HIGH);
+     digitalWrite(d,HIGH);
+     digitalWrite(e,HIGH);
+     digitalWrite(f,HIGH);
+     digitalWrite(g,LOW);
   }
   if(i==2){
-     digitalWrite(a, HIGH);
-     digitalWrite(b, HIGH);
-     digitalWrite(c, LOW);
-     digitalWrite(d, HIGH);
-     digitalWrite(e, HIGH);
-     digitalWrite(f, LOW);
-     digitalWrite(g, HIGH);
-     digitalWrite(A,LOW);
-     digitalWrite(B,LOW);
-     digitalWrite(C,LOW);
-     digitalWrite(D,LOW);
-     digitalWrite(E,LOW);
-     digitalWrite(F,LOW);
-     digitalWrite(G,LOW);
+     digitalWrite(A, HIGH);
+     digitalWrite(B, HIGH);
+     digitalWrite(C, LOW);
+     digitalWrite(D, HIGH);
+     digitalWrite(E, HIGH);
+     digitalWrite(F, LOW);
+     digitalWrite(G, HIGH);
+     digitalWrite(a,HIGH);
+     digitalWrite(b,HIGH);
+     digitalWrite(c,HIGH);
+     digitalWrite(d,HIGH);
+     digitalWrite(e,HIGH);
+     digitalWrite(f,HIGH);
+     digitalWrite(g,LOW);
   }
   if(i==3){
-     digitalWrite(a, HIGH);
-     digitalWrite(b, HIGH);
-     digitalWrite(c, HIGH);
-     digitalWrite(d, HIGH);
-     digitalWrite(e, LOW);
-     digitalWrite(f, LOW);
-     digitalWrite(g, HIGH);
-     digitalWrite(A,LOW);
-     digitalWrite(B,LOW);
-     digitalWrite(C,LOW);
-     digitalWrite(D,LOW);
-     digitalWrite(E,LOW);
-     digitalWrite(F,LOW);
-     digitalWrite(G,LOW);
+     digitalWrite(A, HIGH);
+     digitalWrite(B, HIGH);
+     digitalWrite(C, HIGH);
+     digitalWrite(D, HIGH);
+     digitalWrite(E, LOW);
+     digitalWrite(F, LOW);
+     digitalWrite(G, HIGH);
+     digitalWrite(a,HIGH);
+     digitalWrite(b,HIGH);
+     digitalWrite(c,HIGH);
+     digitalWrite(d,HIGH);
+     digitalWrite(e,HIGH);
+     digitalWrite(f,HIGH);
+     digitalWrite(g,LOW);
   }
   if(i==4){
-     digitalWrite(a, LOW);
-     digitalWrite(b, HIGH);
-     digitalWrite(c, HIGH);
-     digitalWrite(d, LOW);
-     digitalWrite(e, LOW);
-     digitalWrite(f, HIGH);
-     digitalWrite(g, HIGH);
-     digitalWrite(A,LOW);
-     digitalWrite(B,LOW);
-     digitalWrite(C,LOW);
-     digitalWrite(D,LOW);
-     digitalWrite(E,LOW);
-     digitalWrite(F,LOW);
-     digitalWrite(G,LOW);
+     digitalWrite(A, LOW);
+     digitalWrite(B, HIGH);
+     digitalWrite(C, HIGH);
+     digitalWrite(D, LOW);
+     digitalWrite(E, LOW);
+     digitalWrite(F, HIGH);
+     digitalWrite(G, HIGH);
+     digitalWrite(a,HIGH);
+     digitalWrite(b,HIGH);
+     digitalWrite(c,HIGH);
+     digitalWrite(d,HIGH);
+     digitalWrite(e,HIGH);
+     digitalWrite(f,HIGH);
+     digitalWrite(g,LOW);
   }
   if(i==5){
-     digitalWrite(a, HIGH);
-     digitalWrite(b, LOW);
-     digitalWrite(c, HIGH);
-     digitalWrite(d, HIGH);
-     digitalWrite(e, LOW);
-     digitalWrite(f, HIGH);
-     digitalWrite(g, HIGH);
-     digitalWrite(A,LOW);
-     digitalWrite(B,LOW);
-     digitalWrite(C,LOW);
-     digitalWrite(D,LOW);
-     digitalWrite(E,LOW);
-     digitalWrite(F,LOW);
-     digitalWrite(G,LOW);
+     digitalWrite(A, HIGH);
+     digitalWrite(B, LOW);
+     digitalWrite(C, HIGH);
+     digitalWrite(D, HIGH);
+     digitalWrite(E, LOW);
+     digitalWrite(F, HIGH);
+     digitalWrite(G, HIGH);
+     digitalWrite(a,HIGH);
+     digitalWrite(b,HIGH);
+     digitalWrite(c,HIGH);
+     digitalWrite(d,HIGH);
+     digitalWrite(e,HIGH);
+     digitalWrite(f,HIGH);
+     digitalWrite(g,LOW);
   }
   if(i==6){
-     digitalWrite(a, HIGH);
-     digitalWrite(b, LOW);
-     digitalWrite(c, HIGH);
-     digitalWrite(d, HIGH);
-     digitalWrite(e, HIGH);
-     digitalWrite(f, HIGH);
-     digitalWrite(g, HIGH);
-     digitalWrite(A,LOW);
-     digitalWrite(B,LOW);
-     digitalWrite(C,LOW);
-     digitalWrite(D,LOW);
-     digitalWrite(E,LOW);
-     digitalWrite(F,LOW);
-     digitalWrite(G,LOW);
+     digitalWrite(A, HIGH);
+     digitalWrite(B, LOW);
+     digitalWrite(C, HIGH);
+     digitalWrite(D, HIGH);
+     digitalWrite(E, HIGH);
+     digitalWrite(F, HIGH);
+     digitalWrite(G, HIGH);
+     digitalWrite(a,HIGH);
+     digitalWrite(b,HIGH);
+     digitalWrite(c,HIGH);
+     digitalWrite(d,HIGH);
+     digitalWrite(e,HIGH);
+     digitalWrite(f,HIGH);
+     digitalWrite(g,LOW);
   }
  if(i==7){
-     digitalWrite(a, HIGH);
-     digitalWrite(b, HIGH);
-     digitalWrite(c, HIGH);
-     digitalWrite(d, LOW);
-     digitalWrite(e, LOW);
-     digitalWrite(f, LOW);
-     digitalWrite(g, LOW);
-     digitalWrite(A,LOW);
-     digitalWrite(B,LOW);
-     digitalWrite(C,LOW);
-     digitalWrite(D,LOW);
-     digitalWrite(E,LOW);
-     digitalWrite(F,LOW);
-     digitalWrite(G,LOW);
+     digitalWrite(A, HIGH);
+     digitalWrite(B, HIGH);
+     digitalWrite(C, HIGH);
+     digitalWrite(D, LOW);
+     digitalWrite(E, LOW);
+     digitalWrite(F, LOW);
+     digitalWrite(G, LOW);
+     digitalWrite(a,HIGH);
+     digitalWrite(b,HIGH);
+     digitalWrite(c,HIGH);
+     digitalWrite(d,HIGH);
+     digitalWrite(e,HIGH);
+     digitalWrite(f,HIGH);
+     digitalWrite(g,LOW);
   }
  if(i==8){
-     digitalWrite(a, HIGH);
-     digitalWrite(b, HIGH);
-     digitalWrite(c, HIGH);
-     digitalWrite(d, HIGH);
-     digitalWrite(e, HIGH);
-     digitalWrite(f, HIGH);
-     digitalWrite(g, HIGH);
-     digitalWrite(A,LOW);
-     digitalWrite(B,LOW);
-     digitalWrite(C,LOW);
-     digitalWrite(D,LOW);
-     digitalWrite(E,LOW);
-     digitalWrite(F,LOW);
-     digitalWrite(G,LOW);
+     digitalWrite(A, HIGH);
+     digitalWrite(B, HIGH);
+     digitalWrite(C, HIGH);
+     digitalWrite(D, HIGH);
+     digitalWrite(E, HIGH);
+     digitalWrite(F, HIGH);
+     digitalWrite(G, HIGH);
+     digitalWrite(a,HIGH);
+     digitalWrite(b,HIGH);
+     digitalWrite(c,HIGH);
+     digitalWrite(d,HIGH);
+     digitalWrite(e,HIGH);
+     digitalWrite(f,HIGH);
+     digitalWrite(g,LOW);
   }
  if(i==9){
-     digitalWrite(a, HIGH);
-     digitalWrite(b, HIGH);
-     digitalWrite(c, HIGH);
-     digitalWrite(d, LOW);
-     digitalWrite(e, LOW);
-     digitalWrite(f, HIGH);
-     digitalWrite(g, HIGH);
-     digitalWrite(A,LOW);
-     digitalWrite(B,LOW);
-     digitalWrite(C,LOW);
-     digitalWrite(D,LOW);
-     digitalWrite(E,LOW);
-     digitalWrite(F,LOW);
-     digitalWrite(G,LOW);
+     digitalWrite(A, HIGH);
+     digitalWrite(B, HIGH);
+     digitalWrite(C, HIGH);
+     digitalWrite(D, LOW);
+     digitalWrite(E, LOW);
+     digitalWrite(F, HIGH);
+     digitalWrite(G, HIGH);
+     digitalWrite(a,HIGH);
+     digitalWrite(b,HIGH);
+     digitalWrite(c,HIGH);
+     digitalWrite(d,HIGH);
+     digitalWrite(e,HIGH);
+     digitalWrite(f,HIGH);
+     digitalWrite(g,LOW);
   }
  if(i==10){
      digitalWrite(a, LOW);
