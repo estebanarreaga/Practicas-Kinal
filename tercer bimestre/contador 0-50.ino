@@ -24,10 +24,10 @@
 #define A 11
 #define B 12
 #define C 13
-#define D 14
-#define E 15
-#define F 16
-#define G 17     
+#define D A0
+#define E A1
+#define F A2
+#define G A3     
 
 void ISR_falling(void);
 void ISR_rising(void);
