@@ -13,13 +13,10 @@
 #define ledsito 3
 #define potenciometrito A0
 int intencidadsita;
-
 void setup() {
   pinMode(ledsito, OUTPUT);
 }
- 
-
 void loop() {
- intencidadsita= analogRead(potenciometrito)/4;
+ intencidadsita = map(analogRead(potenciometrito), 0, 1023, 0, 255);
  analogWrite(ledsito, intencidadsita);
 }
