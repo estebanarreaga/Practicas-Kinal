@@ -17,7 +17,7 @@ int Vin = 5;
 float Vout = 0;
 float R2 = 1000;
 float R1 = 0;
-float buffer = 0;
+float resistencitax = 0;
 
 LiquidCrystal_I2C lcdsito(0x27,16,2);
 void setup()
@@ -31,10 +31,10 @@ void loop()
 {
 valor = analogRead(res);
   if(valor){
-    buffer = valor * Vin;
-    Vout = (buffer)/1023.0;
-    buffer = (Vin/Vout);
-    R1= R2 * buffer;
+    resistencitax = valor * Vin;
+    Vout = (resistencitax)/1023.0;
+    resistencitax = (Vin/Vout);
+    R1= R2 * buffresistencitax;
     lcdsito.setCursor(0,0),
     lcdsito.print("Vout: ");
     lcdsito.setCursor(5,0);
