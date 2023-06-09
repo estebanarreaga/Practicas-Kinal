@@ -7,7 +7,7 @@
  * Curso: Taller de electronica digital y reparación de computadoras I
  * Nombre: Esteban Andres Rivas Arreaga
  * Carnet: 2020198
- * Proyecto: Contador de 0-50
+ * Proyecto: led por potenciometro
 */
 
 #define ledsito 3
