@@ -41,7 +41,6 @@ void setup() {
   digitalWrite(ledR, LOW); 
 }
 void loop() {
-  myStepper.step(stepsPerRevolution);
   obstaculito();
 }
 void obstaculito(){
@@ -81,8 +80,10 @@ void obstaculito(){
   ciervito.write(90);
  }
  myStepper.step(0);
+ delay(525);
+ myStepper.step(stepsPerRevolution);
   }
   else{
-    myStepper.step(0);
+    myStepper.step(stepsPerRevolution);
   }
   }
