@@ -1,3 +1,15 @@
+/*
+ * Fundacion Kinal
+ * Centro educativo tecnico laboral Kinal
+ * Electronica
+ * Grado: Quinto
+ * Sección: A
+ * Curso: TIC´S y Electronica digital
+ * Nombre: Esteban Andres Rivas Arreaga
+ * Carnet: 2020198
+ * Proyecto:
+*/
+
 #include <SoftwareSerial.h>
 #include <DallasTemperature.h>
 #include <OneWire.h>
