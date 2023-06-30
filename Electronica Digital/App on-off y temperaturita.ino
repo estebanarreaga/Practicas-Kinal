@@ -20,7 +20,6 @@ void loop() {
   sensorsito.requestTemperatures();
   float temperaturita= sensorsito.getTempCByIndex(0);
 if(bluet.available()){
-  //Serial.write(bluet.read());
   receptor=bluet.read();
   Serial.println(receptor);
 
