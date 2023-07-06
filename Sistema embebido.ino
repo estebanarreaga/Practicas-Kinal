@@ -1,3 +1,15 @@
+/*
+ * Fundacion Kinal
+ * Centro educativo tecnico laboral Kinal
+ * Electronica
+ * Grado: Quinto
+ * Sección: A
+ * Curso: Taller de electronica digital y reparación de computadoras I
+ * Nombre: Esteban Andres Rivas Arreaga
+ * Carnet: 2020198
+ * Proyecto: Sistema embebido
+*/
+
 #include <LedControl.h>   //libreria que me permite usar el controlador led max7219
 
 //Directivas de preprocesador
