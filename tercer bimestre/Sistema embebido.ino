@@ -10,6 +10,7 @@
  * Proyecto: Sistema embebido
 */
 
+#include <Ticker.h>
 #include <LedControl.h>   //libreria que me permite usar el controlador led max7219
 
 //Directivas de preprocesador
@@ -21,7 +22,8 @@ int adc, conver;
 //Constructores
 LedControl matricita = LedControl(entradita,clocksito,cs,1);
 
-
+void medicion(void);
+Ticker accion_med(medicion,2000);
 /*
  * Variable:
  * Estas variables especifican que leds deben de encenderse en la matriz
@@ -90,17 +92,28 @@ byte fueguito[8]= {     // array que contiene todos los elementos de las
   B01011010,
   B00111100
 };
+byte hielito[8]= {     // array que contiene todos los elementos de las
+  B10010010,
+  B01010100,
+  B00111000,
+  B11111110,
+  B00111000,
+  B01010100,
+  B10010010,
+  B00000000
+};
 
 
 
 unsigned long delaycito = 850;   //espacio entre animaciones.
 
 //Prototipos de funciones
-int display_number(unsigned char number);
+int alerta(unsigned char number);
 
 void setup()
 {
   Serial.begin(9600); //Inicio la comunicacion serial a 9600 baudios.
+  accion_med.start();
   matricita.shutdown(0,false); //Activo el max7219 para poder mostrar los digitos.
   matricita.setIntensity(0,15);  //Brilo a la mitad 
   matricita.clearDisplay(0);    //limpio el display
@@ -109,29 +122,13 @@ void setup()
 
 void loop() 
 {
-  adc = analogRead(A0);
-  conver = map (adc,0,1024,0,100);
-  Serial.println(adc);
-  Serial.println("porcentaje:");
-  Serial.println(conver);
-  delay(100);
 
- if(adc>35 && adc>=3){
-  for(int i =0; i<7;i++)
-  {
-    alerta(i);
-    delay(delaycito);
-  }
- }
-  else{
-     matricita.clearDisplay(0);
-  }
+accion_med.update();  
 }
 
 int alerta(unsigned char number)
 {
-
-  switch (number)
+ switch (number)
   {
     case (0):
     {
@@ -189,5 +186,39 @@ int alerta(unsigned char number)
       break;
     }
     
+  }
+  
+}
+
+
+
+void medicion(void)
+{
+  adc = analogRead(A0);
+  conver = map (adc,0,1024,0,100);
+  Serial.println(adc);
+  Serial.println("porcentaje:");
+  Serial.println(conver);
+  delay(100);
+  
+ if(adc>50){
+  for(int i =0; i<7;i++)
+  {
+   alerta(i);
+    delay(delaycito);
+  }
+ }
+  else{
+     for(int i=0; i<8;i++)
+      {
+        matricita.setRow(0,i,hielito[i]);
+      }
+      delay(delaycito);
+      matricita.clearDisplay(0);
+      delay(delaycito);
+      for(int i=0; i<8;i++)
+      {
+        matricita.setRow(0,i,hielito[i]);
+      }
   }
 }
