@@ -93,7 +93,7 @@ byte fueguito[8]= {     // array que contiene todos los elementos de las
 
 
 
-unsigned long update_delay = 850;   //espacio entre animaciones.
+unsigned long delaycito = 850;   //espacio entre animaciones.
 
 //Prototipos de funciones
 int display_number(unsigned char number);
@@ -119,8 +119,8 @@ void loop()
  if(adc>35 && adc>=3){
   for(int i =0; i<7;i++)
   {
-    display_number(i);
-    delay(update_delay);
+    alerta(i);
+    delay(delaycito);
   }
  }
   else{
@@ -128,7 +128,7 @@ void loop()
   }
 }
 
-int display_number(unsigned char number)
+int alerta(unsigned char number)
 {
 
   switch (number)
