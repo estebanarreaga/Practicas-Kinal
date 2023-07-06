@@ -30,57 +30,57 @@ Ticker accion_med(medicion,2000);
  * de manera similar a como creabamos caracteres especiales en una lcd.
 */
 byte f[8]= {        // array que contiene todos los elementos de las
-  B00000000,        // filas necesarias por mostrar el digito cero
-  B00111100,
-  B00100000,
-  B00100000,
+  B00000000,
+  B00000000,
+  B00000000,
+  B00000000,
+  B00000000,
   B00111000,
-  B00100000,
-  B00100000,
-  B00100000
+  B01111100,
+  B00111000
 };
 byte u[8]= {       // array que contiene todos los elementos de las
   B00000000,
-  B01000010,
-  B01000010,
-  B01000010,
-  B01000010,
-  B01000010,
-  B01000010,
-  B00111100
+  B00000000,
+  B00001000,
+  B00010000,
+  B00111000,
+  B01111100,
+  B01111100,
+  B00111000
 };
 
 byte e[8]= {       // array que contiene todos los elementos de las
   B00000000,
-  B00111100,
-  B00100000,
-  B00100000,
-  B00111000,
-  B00100000,
-  B00100000,
+  B00001100,
+  B00011000,
+  B01111110,
+  B11111111,
+  B11100111,
+  B01100110,
   B00111100
 };
 
 byte g[8]= {       // array que contiene todos los elementos de las
-  B00000000,
-  B00111100,
   B01000000,
-  B01000000,
-  B01001110,
-  B01000010,
-  B01000010,
+  B01100000,
+  B01111000,
+  B01111110,
+  B11111111,
+  B11100111,
+  B01100110,
   B00111100
 };
 
 byte o[8]= {     // array que contiene todos los elementos de las
-  B00000000,
-  B00111100,
-  B01000010,
-  B01000010,
-  B01000010,
-  B01000010,
-  B01000010,
-  B00111100
+  B01000000,
+  B01100000,
+  B01111000,
+  B01111110,
+  B11111111,
+  B11100111,
+  B01100110,
+  B 00111100
 };
 byte fueguito[8]= {     // array que contiene todos los elementos de las
   B00001100,
@@ -102,7 +102,6 @@ byte hielito[8]= {     // array que contiene todos los elementos de las
   B10010010,
   B00000000
 };
-
 
 
 unsigned long delaycito = 850;   //espacio entre animaciones.
