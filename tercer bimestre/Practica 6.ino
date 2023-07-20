@@ -23,38 +23,58 @@ LedControl matricita = LedControl(entradita,clocksito,cs,1);
 ADXL345 acelerometrin = ADXL345();
 
 byte circulito1[8]= {        // array que contiene todos los elementos de las
-  B00000000,
+  B11111111,
   B00000000,
   B00000000,
   B00011000,
   B00011000,
   B00000000,
   B00000000,
-  B00000000
+  B11111111
 };
 byte circulito2[8]= {       // array que contiene todos los elementos de las
-  B00000000,
+  B11111111,
   B00000000,
   B00000000,
   B11000000,
   B11000000,
   B00000000,
   B00000000,
-  B00000000
+  B11111111
 };
 
 byte circulito3[8]= {       // array que contiene todos los elementos de las
-  B00000000,
+  B11111111,
   B00000000,
   B00000000,
   B00000011,
   B00000011,
   B00000000,
   B00000000,
-  B00000000
+  B11111111
 };
 
-unsigned long delaycito = 10;
+byte circulito4[8]={B11111111,
+  B00000000,
+  B00000000,
+  B00000110,
+  B00000110,
+  B00000000,
+  B00000000,
+  B11111111};
+
+byte circulito5[8]={
+  B11111111,
+  B00000000,
+  B00000000,
+  B01100000,
+  B01100000,
+  B00000000,
+  B00000000,
+  B11111111
+};
+
+unsigned long delaycito = 80;
 
 void setup() {
   Serial.begin(9600);
@@ -89,17 +109,31 @@ if(x==0 && y>=3 && y<=5){
       }  
 } 
 delay(delaycito);
-if(x>=-30 && y>=3 && x<=-1 && y<=14){
+if(x>=-30 && y>=3 && x<=-4 && y<=14){
   for(int i=0; i<8;i++)
       {
         matricita.setRow(0,i,circulito3[i]);
       }  
 }
 delay(delaycito); 
+if(x<=-2 && y==4 &&x>=-3){
+  for(int i=0; i<8;i++)
+      {
+        matricita.setRow(0,i,circulito4[i]);
+      }  
+} 
+delay(delaycito);
 if(x>=2 && y>=-63 && x<=031 && y<=61){
   for(int i=0; i<8;i++)
       {
         matricita.setRow(0,i,circulito2[i]);
+      }  
+} 
+delay(delaycito);
+if(x>=2 && y>=4 && x<=4 && y<=5){
+  for(int i=0; i<8;i++)
+      {
+        matricita.setRow(0,i,circulito5[i]);
       }  
 } 
 delay(delaycito);
