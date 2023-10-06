@@ -80,6 +80,6 @@ float voltajesito_lectura() {
 float resistensita_lectura() {
    int valorsito = analogRead(resistencia);
   float voltajesito = (valorsito / 1023.0) * voltajesito_ref;
-  float resistance = (R1 * voltajesito) / (voltajesito_ref - voltajesito);
-  return resistance;
+  float resistencita = (R1 * voltajesito) / (voltajesito_ref - voltajesito);
+  return resistencita;
 }
