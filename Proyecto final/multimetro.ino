@@ -67,14 +67,14 @@ void loop() {
 float corrientita_lectura() {
   float sensibilidadsita = 185.0;
   float corrientesita = analogRead(sensorsito_corriente) * (5.0 / 1023.0); 
-  float current = (corrientesita - 2.5) / sensibilidadsita;
-  return current;
+  float inteinsidadsita = (corrientesita - 2.5) / sensibilidadsita;
+  return inteinsidadsita;
 }
 
 float voltajesito_lectura() {
   int sensorin_voltaje = analogRead(sensorsito_voltaje);
-  float voltaje = map(sensorin_voltaje, 0, 1023, 0.0, 25.0);
-  return voltaje;
+  float voltajito = map(sensorin_voltaje, 0, 1023, 0.0, 25.0);
+  return voltajito;
 }
 
 float resistensita_lectura() {
